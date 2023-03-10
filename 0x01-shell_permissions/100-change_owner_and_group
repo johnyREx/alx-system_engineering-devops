@@ -1,6 +1,3 @@
 #!/bin/bash
-<<<<<<< HEAD
 chown vincent:staff * 
-=======
-chown vincent:staff 
->>>>>>> bab93909ad8f77d2c971a59176aa32942eb2794c
+~
