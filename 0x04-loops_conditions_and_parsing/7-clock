@@ -2,14 +2,15 @@
 # This script displays the time for 12 hours and 59 minutes.
 
 hour=0
-minute=1
 
-while [ $hour -le 12 ]; do
-    while [ $minute -le 59 ]; do
-        current_time=$(date "+%I:%M %p" -d "$hour:$minute")
-        echo "$current_time"
-        ((minute++))
+while [ $hour -le 12 ]
+do
+  echo "Hour: $hour"
+  minute=1
+  while [ $minute -le 59 ]
+    do
+      echo "$minute"
+      (( minute++ ))
     done
-    ((hour++))
-    minute=1
-done | head -n 70
+    (( hour++ ))
+done
