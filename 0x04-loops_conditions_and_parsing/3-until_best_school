@@ -3,7 +3,7 @@
 
 count=0
 
-until [ $count -ge 10 ]; do
+until [ $count -eq 10 ]; do
 	echo "best School"
 	((count++))
 done
