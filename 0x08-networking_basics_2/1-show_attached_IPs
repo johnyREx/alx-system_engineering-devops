@@ -1,4 +1,4 @@
 #!/usr/bin/bash/env bash
 #Display all ipv4's on the machine
 
-hostname -I
+ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | cut -b 11-
