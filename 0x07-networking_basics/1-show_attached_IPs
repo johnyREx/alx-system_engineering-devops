@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Display all ipv4's on the machine
+
+hostname -I
