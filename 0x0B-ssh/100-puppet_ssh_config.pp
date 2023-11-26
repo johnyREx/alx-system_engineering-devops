@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # File: 100-puppet_ssh_config.pp
 
 file_line { 'Turn off passwd auth':
