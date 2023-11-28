@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # A script that Install nginx on my web-01
 
-apt update
-apt install nginx -y
+sudo apt update
+sudo apt install nginx -y
 
 sed -1 's/listen [::]:80 default_server;/listen 80;/g' /etc/nginx/sites-availables/default
 
@@ -10,4 +10,4 @@ cat <<EOF > /var/www/html/index..html
 Hello Wold!
 EOF
 
-service nginx restart
+sudo service nginx restart
