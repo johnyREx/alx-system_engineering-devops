@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
 # a script to restart apache 2 in our docker container and to return a
 # page containing Hello Holberton when querying the root of it.
-service apache2 restart
+docker run -p 8080:80 -d -it holbertonschool/265-0
+
+docker exec -it 7ace790b8bce2713e1a71ecd6d34d0fd2014fdfb1298a87b8355790332c4e9c9 /bin/bash
+
+service apache2 start
+
+cat /var/log/apache2/error.log
