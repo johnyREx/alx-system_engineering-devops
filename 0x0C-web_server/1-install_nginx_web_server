@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
-# installs nginx and configure to listen on port 80
+# A script that Install nginx on my web-01
 
-sudo apt -y update
-sudo apt -y upgrade
-sudo apt -y install nginx
-sudo chown -R ubuntu:ubuntu /var/www
-echo "Hello World!" > /var/www/html/index.html
-sudo service nginx start
+apt update
+apt install nginx -y
+
+sed -1 's/listen [::]:80 default_server;/listen 80;/g' /etc/nginx/sites-availables/default
+
+cat <<EOF > /var/www/html/index..html
+Hello Wold!
+EOF
+
+service nginx restart
