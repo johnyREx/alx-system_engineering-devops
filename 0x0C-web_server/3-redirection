@@ -6,12 +6,12 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow "Nginx HTTP" # allow incoming connections from nginx
 # sudo ufw status verbose: should return inactive
-cd /var/www/ || return
+cd /var/www/ || exit
 sudo chmod 777 html
 echo "Hello World!" > html/index.html
 sudo chmod 755 html
 # Configure your Nginx server to redirect to another page
-cd /etc/nginx/sites-enabled/ || return
+NGINX_CONFIG_PATH="/etc/nginx/sites-enabled/default"
 REDIRECT_CONFIG="\tlocation /redirect_me {\n\t\treturn 301 https://www.alxafrica.com;\n\t}"
-sudo sed -i "52 a \    $REDIRECT_CONFIG" /etc/nginx/sites-enabled/default
+sudo sed -i "/server {/a $REDIRECT_CONFIG" "$NGINX_CONFIG_PATH"
 sudo service nginx restart
