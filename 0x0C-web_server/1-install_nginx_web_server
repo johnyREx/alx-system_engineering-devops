@@ -1,20 +1,7 @@
 #!/usr/bin/env bash
-# A script that Install nginx on my web-01
-
-# update packages
-sudo apt -get update -y
-
-# install nginx
-sudo apt -get install nginx -y
-sudo sudo ufw allow 80
-
-# Allow listening on port 80
-sudo ufw allow 'Nginx HTTP'
-
-# sudo chown -R 
-echpo 'Hello World!' | sudo tee /var/www/html/index.nginx-debian.html
-
-# Restarting nginx
-sudo service bginx restart
-
-curl localhost
+# automates nginx setup
+apt-get -y update
+apt-get install -y nginx
+ufw allow 'Nginx HTTP'
+echo 'Hello World!' > /var/www/html/index.html
+service nginx start
