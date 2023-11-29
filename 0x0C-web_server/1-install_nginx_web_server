@@ -1,13 +1,20 @@
 #!/usr/bin/env bash
 # A script that Install nginx on my web-01
 
-sudo apt update
-sudo apt install nginx -y
+# update packages
+sudo apt -get update -y
 
-sed -1 's/listen [::]:80 default_server;/listen 80;/g' /etc/nginx/sites-availables/default
+# install nginx
+sudo apt -get install nginx -y
+sudo sudo ufw allow 80
 
-cat <<EOF > /var/www/html/index..html
-Hello Wold!
-EOF
+# Allow listening on port 80
+sudo ufw allow 'Nginx HTTP'
 
-sudo service nginx restart
+# sudo chown -R 
+echpo 'Hello World!' | sudo tee /var/www/html/index.nginx-debian.html
+
+# Restarting nginx
+sudo service bginx restart
+
+curl localhost
