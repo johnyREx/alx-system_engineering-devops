@@ -7,7 +7,7 @@ add-apt-repository -y ppa:vbernat/haproxy-2.4
 apt-get -y install haproxy
 
 # the load balancer's configuration
-DOMAIN_NAME='munyasi.tech'
+DOMAIN_NAME='rextechcenter.tech'
 INIT_FILE='/etc/default/haproxy'
 CONFIG_FILE='/etc/haproxy/haproxy.cfg'
 HAPROXY_LB_CONFIG=\
@@ -15,8 +15,8 @@ HAPROXY_LB_CONFIG=\
 #--$DOMAIN_NAME-params-begin--
 backend $DOMAIN_NAME-backend
 	balance roundrobin
-    server 20639-web-01 3.227.217.150:80 check
-    server 20639-web-02 3.95.27.202:80 check
+    server 363052-web-0 52.23.177.158:80 check
+    server 363052-web-02 52.306.203.2:80 check
 
 frontend $DOMAIN_NAME-frontend
 	bind *:80
