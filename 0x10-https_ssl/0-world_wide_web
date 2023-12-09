@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Displays information about a sub domain.
+# A script that Displays information about a sub domain.
 info_domain () {
     answer=$(dig "$1" | grep -A1 'ANSWER SECTION' | tail -n 1)
 	sub_d=$(echo "$answer" | awk -F'.' '{print $1}')
